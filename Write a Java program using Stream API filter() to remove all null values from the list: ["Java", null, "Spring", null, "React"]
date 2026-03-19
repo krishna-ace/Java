@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Q5 {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Java", null, "Spring", null, "React");
+
+        list.stream()
+            .filter(Objects::nonNull)
+            .forEach(System.out::println);
+    }
+}
