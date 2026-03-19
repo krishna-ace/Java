@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Q6 {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(3, 4, 7, 8, 9, 1, 5, 4, 16);
+
+        list.stream()
+            .filter(n -> n % 2 != 0)
+            .forEach(System.out::println);
+    }
+}
