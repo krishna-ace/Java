@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Q7 {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(10, 12, 15, 22, 25, 36, 75);
+
+        list.stream()
+            .filter(n -> n % 5 == 0)
+            .forEach(System.out::println);
+    }
+}
