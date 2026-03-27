@@ -1,0 +1,8 @@
+const arr = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+const count = arr.reduce((acc, curr) => {
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(count);
