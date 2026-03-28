@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class TotalCharsReduce {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Java", "Stream", "API");
+
+        int total = list.stream()
+                .map(String::length)
+                .reduce(0, (a, b) -> a + b);
+
+        System.out.println(total);
+    }
+}
