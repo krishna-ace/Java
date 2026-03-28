@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class LongestStringReduce {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Java", "Programming", "Code", "Developer");
+
+        String longest = list.stream()
+                .reduce("", (a, b) -> a.length() > b.length() ? a : b);
+
+        System.out.println(longest);
+    }
+}
