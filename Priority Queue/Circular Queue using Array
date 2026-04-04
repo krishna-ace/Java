@@ -1,0 +1,28 @@
+class CircularQueue {
+    int[] arr = new int[5];
+    int front = -1, rear = -1;
+
+    void enqueue(int x) {
+        if ((rear + 1) % arr.length == front) return;
+        if (front == -1) front = 0;
+        rear = (rear + 1) % arr.length;
+        arr[rear] = x;
+    }
+
+    int dequeue() {
+        if (front == -1) return -1;
+        int val = arr[front];
+        if (front == rear) front = rear = -1;
+        else front = (front + 1) % arr.length;
+        return val;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CircularQueue q = new CircularQueue();
+        q.enqueue(1);
+        q.enqueue(2);
+        System.out.println(q.dequeue());
+    }
+}
