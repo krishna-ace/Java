@@ -1,0 +1,53 @@
+class ReverseLinkedList {
+
+    Node head;
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int d) {
+            data = d;
+        }
+    }
+
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Reverse
+    public void reverse() {
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        ReverseLinkedList list = new ReverseLinkedList();
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+
+        list.reverse();
+        list.display();
+    }
+}
