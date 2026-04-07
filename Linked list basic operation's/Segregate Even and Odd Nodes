@@ -1,0 +1,36 @@
+class EvenOdd {
+    Node head;
+
+    void segregate() {
+        Node evenStart = null, evenEnd = null;
+        Node oddStart = null, oddEnd = null;
+        Node curr = head;
+
+        while (curr != null) {
+            int val = curr.data;
+
+            if (val % 2 == 0) {
+                if (evenStart == null) {
+                    evenStart = evenEnd = curr;
+                } else {
+                    evenEnd.next = curr;
+                    evenEnd = evenEnd.next;
+                }
+            } else {
+                if (oddStart == null) {
+                    oddStart = oddEnd = curr;
+                } else {
+                    oddEnd.next = curr;
+                    oddEnd = oddEnd.next;
+                }
+            }
+            curr = curr.next;
+        }
+
+        if (evenStart == null || oddStart == null) return;
+
+        evenEnd.next = oddStart;
+        oddEnd.next = null;
+        head = evenStart;
+    }
+}
