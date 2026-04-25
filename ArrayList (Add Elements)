@@ -1,12 +1,9 @@
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
-  public static void main(String[] args) {
-    ArrayList<String> cars = new ArrayList<String>();
-    cars.add("Volvo");
-    cars.add("BMW");
-    cars.add("Ford");
-    cars.add("Mazda");
-    System.out.println(cars);
-  }
+    public static void main(String[] args) {
+        List<String> cars = Arrays.asList("Volvo", "BMW", "Ford", "Mazda");
+        System.out.println(cars);
+    }
 }
