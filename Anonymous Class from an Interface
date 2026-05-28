@@ -1,15 +1,15 @@
 
+@FunctionalInterface
 interface Greeting {
-  void sayHello();
+    void sayHello();
 }
+
 public class Main {
-  public static void main(String[] args) {
-    // Anonymous class that implements Greeting
-    Greeting greet = new Greeting() {
-      public void sayHello() {
-        System.out.println("Hello, World!");
-      }
-    };
-    greet.sayHello();
-  }
+    public static void main(String[] args) {
+
+        // Optimized using Lambda Expression
+        Greeting greet = () -> System.out.println("Hello, World!");
+
+        greet.sayHello();
+    }
 }
