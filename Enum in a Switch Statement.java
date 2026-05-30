@@ -3,7 +3,6 @@ enum Level {
   MEDIUM,
   HIGH
 }
-
 public class Main { 
   public static void main(String[] args) {
     Level myVar = Level.MEDIUM; 
