@@ -8,7 +8,6 @@ public class Main {
                             .map(String::valueOf)
                             .reduce((a, b) -> a + "," + b)
                             .orElse("");
-
-        System.out.println(result);
+     System.out.println(result);
     }
 }
